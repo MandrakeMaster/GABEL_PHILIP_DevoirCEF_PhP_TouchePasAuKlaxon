@@ -49,13 +49,16 @@ Le dossier `/database` contient les scripts SQL nécessaires à la mise en place
 > npm install
 
 **4.** Configurer la connexion BDD en adaptant le fichier **`config/database.php`** selon votre environnement local :
- return [
-    'host' => 'localhost', 
-    'dbname' => 'touche_pas_au_klaxon', 
-    'username' => 'root', 
+
+```php
+return [
+    'host' => 'localhost',
+    'dbname' => 'touche_pas_au_klaxon',
+    'username' => 'root',
     'password' => '', 
-    'charset' => 'utf8mb4' 
+    'charset' => 'utf8mb4'
 ];
+```
 
 **5.** Lancer l'analyse statique (PHPStan) pour vérifier la conformité et la robustesse du code :
 > vendor/bin/phpstan analyse
