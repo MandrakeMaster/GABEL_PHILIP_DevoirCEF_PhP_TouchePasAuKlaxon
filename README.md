@@ -7,7 +7,6 @@ Application web de covoiturage interne développée en **PHP pur (Architecture M
 * **MySQL** / MariaDB
 * **Bootstrap 5 & Sass** (pour l'interface utilisateur)
 * **PHPStan** (pour l'analyse statique du code et la qualité)
-* **PHPUnit** (pour les tests unitaires et la validation des opérations d'écriture)
 * **Composer** (gestion des dépendances PHP et autoloading PSR-4)
 * **NPM** (gestion des dépendances front-end / compilation Sass)
 
@@ -49,12 +48,22 @@ Le dossier `/database` contient les scripts SQL nécessaires à la mise en place
 **3.** Installer les dépendances front-end (si modification des styles Sass) :
 > npm install
 
-**4.** Configurer la connexion BDD dans le fichier `config/database.php` (en adaptant le nom de la base de données, l'utilisateur et le mot de passe selon votre environnement local) :
-```php
-return [
+**4.** Configurer la connexion BDD en adaptant le fichier **`config/database.php`** selon votre environnement local :
+ return [
     'host' => 'localhost',
     'dbname' => 'touche_pas_au_klaxon',
     'username' => 'root',
-    'password' => '', 
+    'password' => '',
     'charset' => 'utf8mb4'
 ];
+
+**5.** Lancer l'analyse statique (PHPStan) pour vérifier la conformité et la robustesse du code :
+> vendor/bin/phpstan analyse
+
+**6.** Lancer la suite de tests unitaires (PHPUnit) pour valider les opérations d'écriture et de mise à jour en base de données :
+> vendor/bin/phpunit tests
+
+---
+
+## 👤 Auteur
+* **Philip Gabel** - Étudiant Développeur Web et Web Mobile (Centre Européen de Formation)
