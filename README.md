@@ -7,6 +7,7 @@ Application web de covoiturage interne développée en **PHP pur (Architecture M
 * **MySQL** / MariaDB
 * **Bootstrap 5 & Sass** (pour l'interface utilisateur)
 * **PHPStan** (pour l'analyse statique du code et la qualité)
+* **PHPUnit** (pour les tests unitaires et la validation des opérations d'écriture)
 * **Composer** (gestion des dépendances PHP et autoloading PSR-4)
 * **NPM** (gestion des dépendances front-end / compilation Sass)
 
@@ -39,11 +40,11 @@ Le dossier `/database` contient les scripts SQL nécessaires à la mise en place
 
 ## 🚀 Installation et Lancement du Projet
 
-**1.** Cloner ou placer le projet dans votre environnement de développement local (ex: `htdocs` sous WampServer / Xampp ou via le serveur interne PHP).  
- > git clone https://github.com/MandrakeMaster/GABEL_PHILIP_DevoirCEF_PhP_TouchePasAuKlaxon
+**1.** Cloner ou placer le projet dans votre environnement de développement local (ex: `htdocs` sous WampServer / Xampp ou via le serveur interne PHP) :  
+> git clone https://github.com/MandrakeMaster/GABEL_PHILIP_DevoirCEF_PhP_TouchePasAuKlaxon
 
 **2.** Installer les dépendances PHP via Composer :
- > composer install
+> composer install
 
 **3.** Installer les dépendances front-end (si modification des styles Sass) :
 > npm install
@@ -57,11 +58,3 @@ return [
     'password' => '', 
     'charset' => 'utf8mb4'
 ];
-```
-**5.** Lancer l'analyse statique (PHPStan) pour vérifier la conformité et la robustesse du code :
-vendor/bin/phpstan analyse
-
----
-
-## 👤 Auteur
-* **Philip Gabel** - Étudiant Développeur Web et Web Mobile (Centre Européen de Formation)
