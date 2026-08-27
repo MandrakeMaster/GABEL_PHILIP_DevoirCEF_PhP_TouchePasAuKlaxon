@@ -1,0 +1,24 @@
+{
+  "name": "gabel_philip_devoircef_php_touchepasauklaxon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass assets/scss/main.scss public/css/main.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MandrakeMaster/GABEL_PHILIP_DevoirCEF_PhP_TouchePasAuKlaxon.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/MandrakeMaster/GABEL_PHILIP_DevoirCEF_PhP_TouchePasAuKlaxon/issues"
+  },
+  "homepage": "https://github.com/MandrakeMaster/GABEL_PHILIP_DevoirCEF_PhP_TouchePasAuKlaxon#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "sass": "^1.103.1"
+  }
+}
