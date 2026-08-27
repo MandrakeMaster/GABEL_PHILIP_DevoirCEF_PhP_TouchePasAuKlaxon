@@ -57,7 +57,7 @@ return [
     'password' => '', 
     'charset' => 'utf8mb4'
 ];
-
+```
 **5.** Lancer l'analyse statique (PHPStan) pour vérifier la conformité et la robustesse du code :
 vendor/bin/phpstan analyse
 
