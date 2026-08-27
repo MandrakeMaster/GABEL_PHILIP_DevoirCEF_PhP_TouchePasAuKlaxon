@@ -49,6 +49,7 @@ Le dossier `/database` contient les scripts SQL nécessaires à la mise en place
 > npm install
 
 **4.** Configurer la connexion BDD dans le fichier `config/database.php` (en adaptant le nom de la base de données, l'utilisateur et le mot de passe selon votre environnement local) :
+```php
 return [
     'host' => 'localhost',
     'dbname' => 'touche_pas_au_klaxon',
