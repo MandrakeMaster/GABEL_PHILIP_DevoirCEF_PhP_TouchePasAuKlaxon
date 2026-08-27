@@ -1,0 +1,11 @@
+{
+    "name": "gabel/gabel_philip_devoir-cef_ph-p_touche-pas-au-klaxon",
+    "autoload": {
+        "psr-4": {
+            "Gabel\\GabelPhilipDevoirCefPhPTouchePasAuKlaxon\\": "src/"
+        }
+    },
+    "require": {
+        "izniburak/router": "^3.1"
+    }
+}
