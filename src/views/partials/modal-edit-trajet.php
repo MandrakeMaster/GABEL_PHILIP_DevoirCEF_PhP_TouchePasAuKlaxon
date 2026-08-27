@@ -1,3 +1,9 @@
+<?php
+if (!isset($trajet)) {
+    $trajet = null;
+}
+?>
+
 <!-- Modale de modification de trajet -->
 <div class="modal fade" id="modalEditTrajet<?= $trajet['id'] ?>" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">

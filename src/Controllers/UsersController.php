@@ -3,10 +3,15 @@ namespace Gabel\GabelPhilipDevoirCefPhPTouchePasAuKlaxon\Controllers;
 
 use Gabel\GabelPhilipDevoirCefPhPTouchePasAuKlaxon\Models\User;
 
+/**
+ * Contrôleur de gestion des utilisateurs pour l'administration.
+ */
 class UsersController {
 
     /**
-     * Vérifie si l'utilisateur connecté est bien un administrateur
+     * Vérifie si l'utilisateur connecté est bien un administrateur.
+     * 
+     * @return void
      */
     private function checkAdmin() {
         if (session_status() === PHP_SESSION_NONE) {
@@ -21,7 +26,9 @@ class UsersController {
     }
 
     /**
-     * Affiche la liste de tous les utilisateurs (Page d'administration en lecture seule)
+     * Affiche la liste de tous les utilisateurs (Page d'administration en lecture seule).
+     * 
+     * @return void
      */
     public function index() {
         $this->checkAdmin();
