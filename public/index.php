@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Point d'entrée de l'application (Front Controller)
  * 
@@ -13,12 +14,15 @@ session_start();
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use Buki\Router\Router;
+use Gabel\GabelPhilipDevoirCefPhPTouchePasAuKlaxon\Models\Trajet;
+use Gabel\GabelPhilipDevoirCefPhPTouchePasAuKlaxon\Controllers\AuthController;
 
 $router = new Router();
 
 // Routes principales de l'application
 $router->get('/', function() {
-    echo "<h1>Bienvenue sur Touche pas au klaxon !</h1>";
+    $trajets = Trajet::allWithDetails();
+    require_once __DIR__ . '/../src/Views/home.php';
 });
 
 $router->get('/trajets', function() {
@@ -27,6 +31,15 @@ $router->get('/trajets', function() {
 
 $router->get('/connexion', function() {
     echo "<h1>Connexion</h1>";
+});
+
+// Routes utilitaires pour les tests de session
+$router->get('/login-test', function() {
+    AuthController::login('alexandre.martin@email.fr');
+});
+
+$router->get('/logout', function() {
+    AuthController::logout();
 });
 
 // Lancement du routeur
