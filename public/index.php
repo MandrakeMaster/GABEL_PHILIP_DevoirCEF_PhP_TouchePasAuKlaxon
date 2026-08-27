@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Point d'entrée de l'application (Front Controller)
  * 
@@ -19,7 +18,7 @@ use Gabel\GabelPhilipDevoirCefPhPTouchePasAuKlaxon\Controllers\AuthController;
 
 $router = new Router();
 
-// Routes principales de l'application
+// Routes principales de l'application (Page d'accueil)
 $router->get('/', function() {
     $trajets = Trajet::allWithDetails();
     require_once __DIR__ . '/../src/Views/home.php';
@@ -29,15 +28,12 @@ $router->get('/trajets', function() {
     echo "<h1>Liste des covoiturages</h1>";
 });
 
-$router->get('/connexion', function() {
-    echo "<h1>Connexion</h1>";
+// Route d'authentification : Traitement de la soumission du formulaire de connexion (POST)
+$router->post('/login-submit', function() {
+    AuthController::login();
 });
 
-// Routes utilitaires pour les tests de session
-$router->get('/login-test', function() {
-    AuthController::login('alexandre.martin@email.fr');
-});
-
+// Route de déconnexion de l'utilisateur
 $router->get('/logout', function() {
     AuthController::logout();
 });
