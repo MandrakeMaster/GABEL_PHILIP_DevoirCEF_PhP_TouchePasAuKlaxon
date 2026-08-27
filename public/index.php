@@ -15,6 +15,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use Buki\Router\Router;
 use Gabel\GabelPhilipDevoirCefPhPTouchePasAuKlaxon\Models\Trajet;
 use Gabel\GabelPhilipDevoirCefPhPTouchePasAuKlaxon\Controllers\AuthController;
+use Gabel\GabelPhilipDevoirCefPhPTouchePasAuKlaxon\Controllers\TrajetController;
 
 $router = new Router();
 
@@ -36,6 +37,21 @@ $router->post('/login-submit', function() {
 // Route de déconnexion de l'utilisateur
 $router->get('/logout', function() {
     AuthController::logout();
+});
+
+// Route pour enregistrer un nouveau trajet (POST depuis la modale)
+$router->post('/trajet-store', function() {
+    TrajetController::store();
+});
+
+// Route pour mettre à jour un trajet (POST depuis la modale de modification)
+$router->post('/trajet-update', function() {
+    TrajetController::update();
+});
+
+// Route pour supprimer un trajet (GET avec ID)
+$router->get('/trajets/supprimer', function() {
+    TrajetController::destroy();
 });
 
 // Lancement du routeur

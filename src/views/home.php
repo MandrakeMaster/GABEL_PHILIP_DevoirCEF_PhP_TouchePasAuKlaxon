@@ -47,17 +47,24 @@
                                 </button>
 
                                 <?php if ($trajet['auteur'] == $_SESSION['user_id'] || (isset($_SESSION['user_admin']) && $_SESSION['user_admin'] == 1)): ?>
-                                    <a href="/trajets/modifier?id=<?= $trajet['id'] ?>" class="btn btn-sm btn-light text-dark border-0" title="Modifier">✏️</a>
+                                    <!-- Bouton modale de modification -->
+                                    <button type="button" class="btn btn-sm btn-light text-dark border-0" data-bs-toggle="modal" data-bs-target="#modalEditTrajet<?= $trajet['id'] ?>" title="Modifier">
+                                        ✏️
+                                    </button>
                                     <a href="/trajets/supprimer?id=<?= $trajet['id'] ?>" class="btn btn-sm btn-light text-danger border-0" title="Supprimer" onclick="return confirm('Confirmer la suppression ?')">🗑️</a>
                                 <?php endif; ?>
                             </td>
                         <?php endif; ?>
                     </tr>
 
-                    <!-- Inclusion propre de la modale pour ce trajet -->
-                    <?php if (isset($_SESSION['user_id'])) {
-                        include __DIR__ . '/partials/modal-details.php';
-                    } ?>
+                    <!-- Inclusions des modales pour ce trajet spécifique -->
+                    <?php if (isset($_SESSION['user_id'])): ?>
+                        <?php include __DIR__ . '/partials/modal-details.php'; ?>
+                        
+                        <?php if ($trajet['auteur'] == $_SESSION['user_id'] || (isset($_SESSION['user_admin']) && $_SESSION['user_admin'] == 1)): ?>
+                            <?php include __DIR__ . '/partials/modal-edit-trajet.php'; ?>
+                        <?php endif; ?>
+                    <?php endif; ?>
 
                 <?php endforeach; ?>
             </tbody>
