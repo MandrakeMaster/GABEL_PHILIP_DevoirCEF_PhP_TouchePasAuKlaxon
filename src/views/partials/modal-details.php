@@ -1,3 +1,21 @@
+<?php
+if (!isset($trajet) || !is_array($trajet)) {
+    $trajet = [
+        'id' => '',
+        'ville_depart_nom' => '',
+        'ville_arrivee_nom' => '',
+        'auteur_prenom' => '',
+        'auteur_nom' => '',
+        'auteur_telephone' => '',
+        'auteur_email' => '',
+        'Date_départ' => '',
+        'Date_arrivée' => '',
+        'places_restantes' => ''
+    ];
+}
+?>
+
+
 <div class="modal fade" id="modalDetails<?= $trajet['id'] ?>" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
