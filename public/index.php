@@ -16,6 +16,8 @@ use Buki\Router\Router;
 use Gabel\GabelPhilipDevoirCefPhPTouchePasAuKlaxon\Models\Trajet;
 use Gabel\GabelPhilipDevoirCefPhPTouchePasAuKlaxon\Controllers\AuthController;
 use Gabel\GabelPhilipDevoirCefPhPTouchePasAuKlaxon\Controllers\TrajetController;
+use Gabel\GabelPhilipDevoirCefPhPTouchePasAuKlaxon\Controllers\AgenceController;
+use Gabel\GabelPhilipDevoirCefPhPTouchePasAuKlaxon\Controllers\UsersController;
 
 $router = new Router();
 
@@ -52,6 +54,40 @@ $router->post('/trajet-update', function() {
 // Route pour supprimer un trajet (GET avec ID)
 $router->get('/trajets/supprimer', function() {
     TrajetController::destroy();
+});
+
+// ==========================================
+// ROUTES ADMINISTRATION - AGENCES
+// ==========================================
+
+// Affichage de la liste des agences (Admin)
+$router->get('/admin/agences', function() {
+    AgenceController::index();
+});
+
+// Enregistrement d'une nouvelle agence (POST)
+$router->post('/admin/agences/store', function() {
+    AgenceController::store();
+});
+
+// Mise à jour d'une agence (POST)
+$router->post('/admin/agences/update', function() {
+    AgenceController::update();
+});
+
+// Suppression d'une agence (GET avec ID)
+$router->get('/admin/agences/supprimer', function() {
+    AgenceController::destroy();
+});
+
+// ==========================================
+// ROUTES ADMINISTRATION - UTILISATEURS
+// ==========================================
+
+// Affichage de la liste des utilisateurs (Admin - Lecture seule)
+$router->get('/admin/utilisateurs', function() {
+    $controller = new UsersController();
+    $controller->index();
 });
 
 // Lancement du routeur

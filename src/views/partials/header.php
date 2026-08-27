@@ -22,7 +22,7 @@ $agences = Agence::all();
                     <?php if (isset($_SESSION['user_admin']) && $_SESSION['user_admin'] == 1): ?>
                         <a href="/admin/utilisateurs" class="btn btn-secondary btn-sm">Utilisateurs</a>
                         <a href="/admin/agences" class="btn btn-secondary btn-sm">Agences</a>
-                        <a href="/admin/trajets" class="btn btn-secondary btn-sm">Trajets</a>
+                        <a href="/" class="btn btn-secondary btn-sm">Trajets</a>
                     <?php endif; ?>
 
                     <!-- Actions utilisateur connecté -->
