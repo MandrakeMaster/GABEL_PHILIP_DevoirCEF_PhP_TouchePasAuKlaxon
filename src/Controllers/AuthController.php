@@ -24,6 +24,8 @@ class AuthController {
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['user_nom'] = $user['Nom'];
                 $_SESSION['user_prenom'] = $user['Prénom'];
+                $_SESSION['user_email'] = $user['email'];
+                $_SESSION['user_telephone'] = $user['téléphone'];
                 $_SESSION['user_admin'] = $user['is_admin'];
 
                 // Message de succès stocké en session

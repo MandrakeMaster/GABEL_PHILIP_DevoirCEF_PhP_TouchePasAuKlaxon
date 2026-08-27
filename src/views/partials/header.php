@@ -1,3 +1,7 @@
+<?php
+use Gabel\GabelPhilipDevoirCefPhPTouchePasAuKlaxon\Models\Agence;
+$agences = Agence::all();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -22,7 +26,7 @@
                     <?php endif; ?>
 
                     <!-- Actions utilisateur connecté -->
-                    <a href="/trajets/creer" class="btn btn-dark btn-sm">Créer un trajet</a>
+                    <button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#modalCreateTrajet">Créer un trajet</button>
                     <span class="text-secondary small">Bonjour <?= htmlspecialchars($_SESSION['user_prenom'] . ' ' . $_SESSION['user_nom']) ?></span>
                     <a href="/logout" class="btn btn-dark btn-sm">Déconnexion</a>
                 <?php else: ?>
@@ -45,3 +49,6 @@
 
 <!-- Inclusion de la modale de connexion -->
 <?php include __DIR__ . '/modal-login.php'; ?>
+
+<!-- Inclusion de la modale de création de trajet -->
+<?php include __DIR__ . '/modal-create-trajet.php'; ?>
