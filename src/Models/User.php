@@ -20,4 +20,17 @@ class User {
         $stmt->execute([$id]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
+    /**
+     * Trouve un utilisateur par son adresse email.
+     * 
+     * @param string $email
+     * @return array|false
+     */
+    public static function findByEmail(string $email) {
+        $db = Database::getConnection();
+        $stmt = $db->prepare("SELECT * FROM User WHERE email = ?");
+        $stmt->execute([$email]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 }
